@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using PROD_STOCK_API;
+using PROD_STOCK_API.Entities;
+using PROD_STOCK_API.Repositories.Implementations;
+using PROD_STOCK_API.Repositories.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +17,12 @@ builder.Services.AddSwaggerGen();
 var Configuration = builder.Configuration;
 builder.Services.AddDbContext<AppDbContext>(options =>
         options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+
+// Solve problem with dates
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
+// Dependency 
+builder.Services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
 
 var app = builder.Build();
 

@@ -60,7 +60,7 @@ namespace PROD_STOCK_API.Migrations
 
                     b.HasIndex("ProductCategoryId");
 
-                    b.ToTable("product");
+                    b.ToTable("product", (string)null);
                 });
 
             modelBuilder.Entity("PROD_STOCK_API.Entities.ProductCategory", b =>
@@ -91,7 +91,7 @@ namespace PROD_STOCK_API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("product_category");
+                    b.ToTable("product_category", (string)null);
                 });
 
             modelBuilder.Entity("PROD_STOCK_API.Entities.Purchase", b =>
@@ -128,7 +128,7 @@ namespace PROD_STOCK_API.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("purchase");
+                    b.ToTable("purchase", (string)null);
                 });
 
             modelBuilder.Entity("PROD_STOCK_API.Entities.Sale", b =>
@@ -165,7 +165,7 @@ namespace PROD_STOCK_API.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("sale");
+                    b.ToTable("sale", (string)null);
                 });
 
             modelBuilder.Entity("PROD_STOCK_API.Entities.Product", b =>
