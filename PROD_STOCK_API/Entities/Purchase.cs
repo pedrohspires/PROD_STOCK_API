@@ -2,6 +2,7 @@
 
 namespace PROD_STOCK_API.Entities
 {
+    [Table("purchase")]
     public class Purchase : BaseEntity
     {
         [Column("value")]

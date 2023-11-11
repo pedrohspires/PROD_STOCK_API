@@ -11,6 +11,6 @@ namespace PROD_STOCK_API.Entities
         public DateTime CreatedAt  { get; set; }
 
         [Column("updated_at")]
-        public DateTime UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
     }
 }

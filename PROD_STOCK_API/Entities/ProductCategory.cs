@@ -2,6 +2,7 @@
 
 namespace PROD_STOCK_API.Entities
 {
+    [Table("product_category")]
     public class ProductCategory : BaseEntity
     {
         [Column("description")]
